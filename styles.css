@@ -869,85 +869,6 @@ input::placeholder, textarea::placeholder { color: rgba(0, 0, 0, .35); }
   margin: 0;
 }
 
-/* Sponsor tiers ------------------------------------------------------------------------ */
-
-.tier-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3px;
-}
-
-.tier {
-  background: var(--panel);
-  padding: 56px 48px;
-  display: flex;
-  flex-direction: column;
-}
-
-.tier-gold { border-top: 4px solid var(--red); }
-.tier-silver { border-top: 4px solid rgba(255, 255, 255, .3); }
-.tier-bronze { border-top: 4px solid rgba(255, 255, 255, .12); }
-
-.tier-label {
-  font-size: 9px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.tier-gold .tier-label { color: var(--red); }
-.tier-silver .tier-label { color: rgba(255, 255, 255, .55); }
-.tier-bronze .tier-label { color: rgba(255, 255, 255, .45); }
-
-.tier h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(38px, 3.6vw, 52px);
-  color: var(--white);
-  margin: 0 0 32px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.tier ul {
-  list-style: none;
-  margin: 0 0 40px;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  flex: 1;
-}
-
-.tier li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, .75);
-}
-
-.tier li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, .4);
-}
-
-.tier-gold li::before { background: var(--red); }
-.tier-bronze li::before { background: rgba(255, 255, 255, .25); }
-
-.tier-price {
-  font-family: var(--font-display);
-  font-size: 13px;
-  color: rgba(255, 255, 255, .45);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
 /* Split layout (form + pitch) ------------------------------------------------------------ */
 
 .split {
@@ -1410,7 +1331,7 @@ a.contact-fact-value:hover { color: var(--red); }
 
   .feature:last-child { border-bottom: none; }
 
-  .division-grid, .option-grid, .form-grid-2, .tier-grid, .benefit-grid {
+  .division-grid, .option-grid, .form-grid-2, .benefit-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1445,8 +1366,6 @@ a.contact-fact-value:hover { color: var(--red); }
   .form-card { padding: 44px 28px; }
 
   .option-card { padding: 44px 28px; }
-
-  .tier { padding: 44px 32px; }
 
   .division-card { padding: 40px 28px; }
 
