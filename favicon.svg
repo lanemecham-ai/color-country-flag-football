@@ -1,0 +1,8 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0 80) scale(1.6)">
+    <g transform="translate(62 20) skewX(-12)">
+      <path transform="translate(84 0)" fill="#D6402B" d="M150 0 H48 L0 48 V132 L48 180 H150 V136 H66 L44 114 V66 L66 44 H150 Z"/>
+      <path fill="#111111" d="M150 0 H48 L0 48 V132 L48 180 H150 V136 H66 L44 114 V66 L66 44 H150 Z"/>
+    </g>
+  </g>
+</svg>
