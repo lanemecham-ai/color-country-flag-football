@@ -24,11 +24,12 @@ All five site forms are embedded JotForm forms, managed in the league's JotForm 
 
 | Form | JotForm ID | Embedded on |
 |---|---|---|
-| Team Registration | `261872345696066` | `register.html` (white card) |
-| Player Registration | `261871778978179` | `register.html` (black card) |
+| Player Registration | `261871778978179` | `register.html` |
 | Sponsor Interest | `261872619555165` | `sponsors.html` |
 | Contact | `261871822348160` | `contact.html` |
 | Stay Updated (email capture) | `261872411626154` | `index.html` (notify bar) |
+
+(The Team Registration JotForm, `261872345696066`, is no longer embedded — teams are added directly by the league, so the site only registers individual athletes.)
 
 Field edits, notification emails, thank-you messages, and submission data all live in JotForm — no site changes needed for those. Confirm each form's **Settings → Emails → Notification** delivers to **colorcountryff@gmail.com**.
 

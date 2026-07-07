@@ -570,6 +570,16 @@ input::placeholder, textarea::placeholder { color: rgba(0, 0, 0, .35); }
   gap: 3px;
 }
 
+.option-single {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.form-single {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
 .option-card {
   background: var(--panel);
   padding: 64px 56px;
