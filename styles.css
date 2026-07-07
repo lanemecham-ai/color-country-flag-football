@@ -202,6 +202,68 @@ input::placeholder, textarea::placeholder { color: rgba(0, 0, 0, .35); }
   margin-left: 4px;
 }
 
+/* Communities dropdown */
+
+.nav-drop { position: relative; }
+
+.nav-drop-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .55);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-drop-toggle:hover { color: var(--red); }
+
+.nav-drop.active-page .nav-drop-toggle {
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 2px;
+}
+
+.nav-drop-caret { font-size: 8px; }
+
+.nav-drop-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  min-width: 200px;
+  padding: 10px 0;
+  z-index: 120;
+}
+
+.nav-drop.open .nav-drop-menu { display: flex; }
+
+@media (hover: hover) and (min-width: 1151px) {
+  .nav-drop:hover .nav-drop-menu { display: flex; }
+}
+
+.nav-drop-menu a {
+  font-size: 11px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .55);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+}
+
+.nav-drop-menu a:hover { color: var(--red); }
+.nav-drop-menu a.active { color: var(--red); }
+
 .nav-toggle {
   display: none;
   background: none;
@@ -1061,6 +1123,104 @@ a.contact-fact-value:hover { color: var(--red); }
   flex-shrink: 0;
 }
 
+/* Community landing pages ------------------------------------------------------------------------ */
+/* Each page sets its school colors via --cc-* custom properties on <body class="community-page"> */
+
+.community-header {
+  background: var(--cc1);
+  border-bottom: 2px solid var(--ink);
+}
+
+.community-header .page-header-lines {
+  background-image: repeating-linear-gradient(-58deg, transparent 0, transparent 72px, var(--cc-lines, rgba(0, 0, 0, .07)) 72px, var(--cc-lines, rgba(0, 0, 0, .07)) 73px);
+}
+
+.community-header .kicker { color: var(--cc-kicker); }
+.community-header h1 { color: var(--cc-ink); }
+.community-header .page-header-aside p { color: var(--cc-muted); }
+
+.community-swatches {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.community-swatch {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, .55);
+}
+
+.community-swatch-label {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--cc-muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.community-page .accent-bar { background: var(--cc2); }
+.community-page .kicker { color: var(--cc-accent-text, var(--cc-step)); }
+.community-header .kicker { color: var(--cc-kicker); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.step {
+  padding: 40px 48px 0 0;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 44px;
+  color: var(--cc-step);
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.step h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--ink);
+  margin: 0 0 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.step p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, .6);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.steps-note {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1.5px solid rgba(0, 0, 0, .1);
+  font-size: 13px;
+  color: rgba(0, 0, 0, .6);
+  line-height: 1.7;
+}
+
+.community-page .cta-banner { background: var(--cc-cta); }
+.community-page .cta-banner-title { color: var(--cc-cta-text); }
+.community-page .cta-banner-sub { color: var(--cc-cta-sub); }
+
+.community-page .cta-banner .btn {
+  background: var(--cc-btn-bg);
+  color: var(--cc-btn-text);
+}
+
+.community-page .cta-banner .btn:hover { opacity: .88; }
+
 /* CTA banner ------------------------------------------------------------------------------------ */
 
 .cta-banner {
@@ -1266,8 +1426,9 @@ a.contact-fact-value:hover { color: var(--red); }
   .teaser-slots { width: 100%; }
 }
 
-@media (max-width: 900px) {
-  /* Nav collapses to hamburger */
+/* Nav collapses to hamburger — happens earlier than the layout stack because
+   the menu (with the Communities dropdown) needs the width */
+@media (max-width: 1150px) {
   .nav-toggle { display: block; }
 
   .nav-menu {
@@ -1298,6 +1459,37 @@ a.contact-fact-value:hover { color: var(--red); }
     text-align: center;
   }
 
+  .nav-drop { width: 100%; }
+
+  .nav-drop-toggle {
+    width: 100%;
+    text-align: left;
+    justify-content: flex-start;
+    padding: 14px var(--pad-x);
+    font-size: 13px;
+  }
+
+  .nav-drop.active-page .nav-drop-toggle {
+    border-bottom: none;
+    color: var(--red);
+  }
+
+  .nav-drop-menu {
+    position: static;
+    transform: none;
+    border: none;
+    background: transparent;
+    min-width: 0;
+    padding: 0 0 8px;
+  }
+
+  .nav-drop-menu a {
+    font-size: 12px;
+    padding: 10px calc(var(--pad-x) + 20px);
+  }
+}
+
+@media (max-width: 900px) {
   /* Hero stacks */
   .hero {
     flex-direction: column;
@@ -1334,6 +1526,10 @@ a.contact-fact-value:hover { color: var(--red); }
   .division-grid, .option-grid, .form-grid-2, .benefit-grid {
     grid-template-columns: 1fr;
   }
+
+  .steps-grid { grid-template-columns: 1fr; }
+
+  .step { padding: 32px 0 0; }
 
   .option-card + .option-card { border-left: none; border-top: 3px solid var(--red); }
 
