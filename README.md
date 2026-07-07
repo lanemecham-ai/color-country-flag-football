@@ -1,6 +1,6 @@
 # Color Country Flag Football League — Website
 
-Official website for Color Country Flag Football, a co-ed youth flag football league (grades K–6, NFL FLAG through USA Football) serving Southern & Central Utah.
+Official website for Color Country Flag Football, a co-ed youth flag football league (grades K–8, NFL FLAG through USA Football) serving Southern & Central Utah.
 
 Plain static HTML/CSS/JS — no frameworks, no build step.
 
