@@ -505,7 +505,7 @@ input::placeholder, textarea::placeholder { color: rgba(0, 0, 0, .35); }
 
 .division-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 3px;
 }
 
